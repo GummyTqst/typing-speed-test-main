@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTypingStore } from "./Stores/typingStore"
-import TypingArea from "./Components/typingArea";
+import TypingArea from "./Components/typingArea/typingArea";
 import DifficultySelect from "./Components/difficultySelect";
 import Stats from "./Components/stats";
 
