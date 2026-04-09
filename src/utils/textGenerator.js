@@ -7,7 +7,7 @@ const passageData = data
  * @returns {{ id: string, text: string}}
  */
 
-export const getRandomPassage = (difficulty = easy) => {
+export const getRandomPassage = (difficulty = 'easy') => {
     const passages = passageData[difficulty]
 
     // Fallback check: if passages is undefined or empty

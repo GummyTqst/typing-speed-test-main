@@ -1,28 +1,21 @@
-import { useTypingStore } from "../../Stores/typingStore";
-
-export default function DifficultySelect() {
-  const { difficulty, setDifficulty, loadNewText } = useTypingStore();
 
 
-  function handleChange(e) {
-    setDifficulty(e.target.value);
-    loadNewText();
-  }
+export default function DifficultySelector({ difficulty, onDifficultyChange }) {
+  const difficulties = ['easy', 'medium', 'hard'];
 
   return (
-    <div className="selector">
-        {/* Desktop */}
-        <div className="selector__buttons">
-          {["easy", "medium", "hard"].map((level) => (
-            <button
-              key={level}
-              className={difficulty === level ? "active" : ""}
-              onClick={() => handleChange(level)}
-            >
-
-            </button>
-          ))}
-        </div>
+    <div className="difficulty-selector">
+      <div className="difficulty-selector__buttons">
+        {difficulties.map((level) => (
+          <button
+            key={level}
+            className={`difficulty-selector__btn ${difficulty === level ? 'active' : ''}`}
+            onClick={() => onDifficultyChange(level)}
+          >
+            {level.charAt(0).toUpperCase() + level.slice(1)}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

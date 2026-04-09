@@ -1,4 +1,4 @@
-import { use, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { calculateAccuracy, calculateWPM } from "../utils/calculateStats";
 
 const useTypingEngine = (mode, timeOption, onFinish) => {
